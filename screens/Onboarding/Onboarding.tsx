@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-import { View, StyleSheet, Animated } from "react-native";
+import { View, StyleSheet, Animated, Switch as RNSwitch } from "react-native";
 import { height, width } from "../../constants/Layout";
 import Slide from "./Slide";
 import { OnboardingSlide } from "../../types";
 import { mediumGrey } from "../../constants/Colors";
-import { Text } from "../../components";
+import { Text, Switch } from "../../components";
+import { Close } from "../../components/Svgs";
 
 const slides: OnboardingSlide[] = [
   {
@@ -37,8 +38,10 @@ const Onboarding = () => {
         {slides.map((slide, index) => {
           if (slide.key) {
             return (
-              <View style={{ width }} key={slide.key}>
+              <View style={{ width, padding: 100 }} key={slide.key}>
                 <Text>Last</Text>
+                <Close size={40} color="#000000" />
+                <Switch defaultValue={true} onValueChange={() => true} />
               </View>
             );
           } else {
