@@ -7,6 +7,7 @@ interface Props extends TextProps {
   variant: "h1" | "h2" | "h3" | "body" | "body-small" | "link" | "button";
   color?: "green" | "white" | "mediumGrey" | "darkerGrey";
   style?: TextStyle;
+  uppercase?: boolean;
 }
 
 const Text = ({
@@ -14,6 +15,7 @@ const Text = ({
   variant = "body",
   color: textColor,
   style: textStyle,
+  uppercase = false,
   ...props
 }: Props) => {
   let style, color;
@@ -56,7 +58,15 @@ const Text = ({
       break;
   }
   return (
-    <RNText style={{ ...style, color, ...textStyle }} {...props}>
+    <RNText
+      style={{
+        ...style,
+        color,
+        textTransform: uppercase ? "uppercase" : "none",
+        ...textStyle,
+      }}
+      {...props}
+    >
       {children}
     </RNText>
   );

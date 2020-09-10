@@ -3,6 +3,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import useCachedResources from "./hooks/useCachedResources";
 import Navigation from "./navigation/Navigation";
+import { Provider } from "./context/Context";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -12,7 +13,9 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation />
+        <Provider>
+          <Navigation />
+        </Provider>
       </SafeAreaProvider>
     );
   }

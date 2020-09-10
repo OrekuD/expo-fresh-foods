@@ -1,5 +1,3 @@
-import { ImageRequireSource } from "react-native";
-
 export type RootStackParamList = {
   Onboarding: undefined;
   Authentication: undefined;
@@ -12,6 +10,17 @@ export type AuthenticationParamList = {
 
 export interface OnboardingSlide {
   label?: string;
-  image?: ImageRequireSource;
   key?: string;
+}
+
+export type AppContext = {
+  darkTheme: boolean;
+  colors: Colors;
+  setDarkTheme: (value: boolean) => void;
+};
+
+export interface Colors {
+  textPrimary: string;
+  textSecondary: string;
+  background: string;
 }

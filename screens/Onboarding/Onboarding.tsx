@@ -1,21 +1,29 @@
-import React, { useRef } from "react";
-import { View, StyleSheet, Animated, Switch as RNSwitch } from "react-native";
+import React, { useRef, useState } from "react";
+import {
+  View,
+  StyleSheet,
+  Animated,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+  TouchableOpacity,
+} from "react-native";
 import { height, width } from "../../constants/Layout";
 import Slide from "./Slide";
 import { OnboardingSlide } from "../../types";
 import { mediumGrey } from "../../constants/Colors";
-import { Text, Switch } from "../../components";
-import { Close } from "../../components/Svgs";
+import { Text, MainButton } from "../../components";
+import RecipePreferences from "./RecipePreferences";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { Ionicons } from "@expo/vector-icons";
+import { useAppContext } from "../../context/Context";
 
 const slides: OnboardingSlide[] = [
   {
     label: "Quickly search and add healthy foods to your cart",
-    image: require("../../assets/images/graphic-onboarding-1.png"),
   },
   {
     label:
       "With one click you can add every ingredient for a recipe to your cart",
-    image: require("../../assets/images/graphic-onboarding-2.png"),
   },
   {
     key: "last",
@@ -23,9 +31,19 @@ const slides: OnboardingSlide[] = [
 ];
 
 const Onboarding = () => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
+  const { top: paddingTop } = useSafeAreaInsets();
+  const { colors } = useAppContext();
+
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        ...styles.container,
+        paddingTop,
+        backgroundColor: colors.background,
+      }}
+    >
       <Animated.ScrollView
         horizontal
         pagingEnabled
@@ -34,18 +52,19 @@ const Onboarding = () => {
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: false }
         )}
+        onMomentumScrollEnd={(
+          event: NativeSyntheticEvent<NativeScrollEvent>
+        ) => {
+          setCurrentIndex(
+            Math.round(event.nativeEvent.contentOffset.x / width)
+          );
+        }}
       >
         {slides.map((slide, index) => {
           if (slide.key) {
-            return (
-              <View style={{ width, padding: 100 }} key={slide.key}>
-                <Text>Last</Text>
-                <Close size={40} color="#000000" />
-                <Switch defaultValue={true} onValueChange={() => true} />
-              </View>
-            );
+            return <RecipePreferences key={index} />;
           } else {
-            return <Slide key={index} slide={slide} />;
+            return <Slide key={index} slide={slide} index={index} />;
           }
         })}
       </Animated.ScrollView>
@@ -68,6 +87,25 @@ const Onboarding = () => {
             );
           })}
         </View>
+        {currentIndex === 2 ? (
+          <MainButton
+            label="Get started"
+            icon={
+              <Ionicons name="md-arrow-round-forward" color="white" size={20} />
+            }
+            onPress={() => {}}
+          />
+        ) : (
+          <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+            <Text
+              variant="h3"
+              uppercase
+              style={{ textAlign: "center", color: colors.textPrimary }}
+            >
+              skip
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
@@ -78,17 +116,15 @@ export default Onboarding;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
   },
   bottomRow: {
-    height: height * 0.3,
+    height: height * 0.25,
     width: width,
-    // backgroundColor: "red",
+    justifyContent: "space-evenly",
   },
   pagination: {
     flexDirection: "row",
     alignSelf: "center",
-    marginVertical: 25,
   },
   dot: {
     width: 10,
@@ -96,5 +132,10 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: mediumGrey,
     marginHorizontal: 5,
+  },
+  button: {
+    height: 60,
+    alignSelf: "center",
+    justifyContent: "center",
   },
 });
