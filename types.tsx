@@ -1,17 +1,17 @@
+import { ImageRequireSource } from "react-native";
+
 export type RootStackParamList = {
-  Root: undefined;
-  NotFound: undefined;
+  Onboarding: undefined;
+  Authentication: undefined;
 };
 
-export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+export type AuthenticationParamList = {
+  SignIn: undefined;
+  SignUp: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
-};
+export interface OnboardingSlide {
+  label?: string;
+  image?: ImageRequireSource;
+  key?: string;
+}
