@@ -10,11 +10,24 @@ interface MainButtonProps {
   label: number | string;
   onPress: () => void;
   icon?: ReactNode;
+  marginTop?: number;
+  marginBottom?: number;
+  marginVertical?: number;
 }
 
-const MainButton = ({ label, onPress, icon }: MainButtonProps) => {
+const MainButton = ({
+  label,
+  onPress,
+  icon,
+  marginBottom = 0,
+  marginTop = 0,
+  marginVertical = 0,
+}: MainButtonProps) => {
   return (
-    <RectButton style={styles.container} onPress={onPress}>
+    <RectButton
+      style={{ ...styles.container, marginBottom, marginTop, marginVertical }}
+      onPress={onPress}
+    >
       {icon && icon}
       <Text
         color="white"

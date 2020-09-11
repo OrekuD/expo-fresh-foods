@@ -33,7 +33,7 @@ const preferences = [
   },
 ];
 
-const RecipePreferences = (props: RecipePreferencesProps) => {
+const RecipePreferences = () => {
   const {
     colors: { textPrimary },
   } = useAppContext();

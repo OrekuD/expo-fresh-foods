@@ -1,1 +1,3 @@
-export { default as Onboarding } from "../screens/Onboarding/Onboarding";
+export { default as Onboarding } from "./Onboarding/Onboarding";
+export { SignIn, SignUp } from "./Authentication";
+export { Home } from "./Main";

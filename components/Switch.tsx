@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Animated, View, StyleSheet, Easing } from "react-native";
+import { Animated, StyleSheet, Easing } from "react-native";
 import { mediumGrey, green } from "../constants/Colors";
-import { Close } from "./Svgs";
 import { Ionicons } from "@expo/vector-icons";
 import { BorderlessButton } from "react-native-gesture-handler";
 
@@ -31,7 +30,7 @@ const Switch = ({ defaultValue, onValueChange }: Props) => {
       animation(0);
       onValueChange(value);
     }
-  }, [value]);
+  });
 
   const color = animationValue.interpolate({
     inputRange: [0, 1],

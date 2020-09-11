@@ -6,16 +6,18 @@ import {
   NativeSyntheticEvent,
   NativeScrollEvent,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { height, width } from "../../constants/Layout";
 import Slide from "./Slide";
-import { OnboardingSlide } from "../../types";
+import { OnboardingSlide, RootStackParamList } from "../../types";
 import { mediumGrey } from "../../constants/Colors";
-import { Text, MainButton } from "../../components";
+import { Text, MainButton, TransparentButton } from "../../components";
 import RecipePreferences from "./RecipePreferences";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { useAppContext } from "../../context/Context";
+import { StackScreenProps } from "@react-navigation/stack";
 
 const slides: OnboardingSlide[] = [
   {
@@ -30,11 +32,14 @@ const slides: OnboardingSlide[] = [
   },
 ];
 
-const Onboarding = () => {
+const Onboarding = ({
+  navigation,
+}: StackScreenProps<RootStackParamList, "Onboarding">) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const { top: paddingTop } = useSafeAreaInsets();
   const { colors } = useAppContext();
+  const scrollRef = useRef<ScrollView>(null);
 
   return (
     <View
@@ -48,6 +53,7 @@ const Onboarding = () => {
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
+        ref={scrollRef}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: false }
@@ -93,18 +99,16 @@ const Onboarding = () => {
             icon={
               <Ionicons name="md-arrow-round-forward" color="white" size={20} />
             }
-            onPress={() => {}}
+            onPress={() => navigation.push("Authentication")}
           />
         ) : (
-          <TouchableOpacity activeOpacity={0.8} style={styles.button}>
-            <Text
-              variant="h3"
-              uppercase
-              style={{ textAlign: "center", color: colors.textPrimary }}
-            >
-              skip
-            </Text>
-          </TouchableOpacity>
+          <TransparentButton
+            label="skip"
+            onPress={() => {
+              setCurrentIndex(2);
+              scrollRef.current?.scrollTo({ x: width * 2 });
+            }}
+          />
         )}
       </View>
     </View>
@@ -132,10 +136,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: mediumGrey,
     marginHorizontal: 5,
-  },
-  button: {
-    height: 60,
-    alignSelf: "center",
-    justifyContent: "center",
   },
 });

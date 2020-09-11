@@ -6,6 +6,59 @@ interface Props {
   color?: string;
 }
 
+export function Account({ size, color }: Props) {
+  return (
+    <Svg width={size} height={size * 0.95} viewBox="0 0 19.692 18.686">
+      <Path
+        d="M19.192 18.186a9.343 9.343 0 00-7.167-9.081V8.066a4.1 4.1 0 10-4.358 0v1.039A9.343 9.343 0 00.5 18.186"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </Svg>
+  );
+}
+
+export function Padlock({ size, color }: Props) {
+  return (
+    <Svg width={size} height={size * 1.1} viewBox="0 0 21 23.181">
+      <G
+        transform="translate(.5 .5)"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Path d="M20 13.181v4.994a4.005 4.005 0 01-4.006 4.006H4.006A4.005 4.005 0 010 18.175v-4.994M0 9.327a4.005 4.005 0 014.006-4.005h11.988A4.005 4.005 0 0120 9.327" />
+        <Circle
+          cx={2.013}
+          cy={2.013}
+          r={2.013}
+          transform="translate(7.987 10.166)"
+        />
+        <Path d="M5.421 4.581a4.579 4.579 0 019.158 0M10 14.192v2.304" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Mail({ size, color }: Props) {
+  return (
+    <Svg width={size} height={size * 0.76} viewBox="0 0 21 16">
+      <G
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Path d="M20.5 4.5v6.994a4.005 4.005 0 01-4.006 4.006H4.506A4.005 4.005 0 01.5 11.494V4.5" />
+        <Path d="M5.675.5H18.6L10.388 9 2.18.5z" />
+      </G>
+    </Svg>
+  );
+}
+
 export function Onboarding({ size, color }: Props) {
   return (
     <Svg width={size} height={size} viewBox="0 0 315 315">
