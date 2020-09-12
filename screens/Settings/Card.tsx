@@ -1,26 +1,47 @@
-import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
-import { darkGrey, lighterGrey } from "../../constants/Colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { RectButton } from "react-native-gesture-handler";
+import { Switch, Text } from "../../components";
+import { darkGrey, green, lighterGrey } from "../../constants/Colors";
 import { width } from "../../constants/Layout";
 import { useAppContext } from "../../context/Context";
 import { Setting } from "../../types";
 
 interface CardProps {
   setting: Setting;
-  changeTheme?: () => void;
+  theme?: boolean;
 }
 
-const Card = ({ setting, changeTheme }: CardProps) => {
-  const { darkTheme } = useAppContext();
+const Card = ({ setting, theme }: CardProps) => {
+  const { darkTheme, colors, setDarkTheme } = useAppContext();
+  const { Icon, iconSize, name } = setting;
   return (
-    <View
+    <RectButton
       style={{
         ...styles.container,
         backgroundColor: darkTheme ? darkGrey : lighterGrey,
       }}
     >
-      <Text style={{ flex: 1 }}>Card</Text>
-    </View>
+      <View style={styles.leftIcon}>
+        <Icon color={green} size={iconSize} />
+      </View>
+      <Text style={{ flex: 1, textTransform: "capitalize" }}>{name}</Text>
+      <View style={styles.rightIcon}>
+        {theme ? (
+          <Switch
+            defaultValue={darkTheme}
+            onValueChange={(value) => setDarkTheme(value)}
+          />
+        ) : (
+          <MaterialCommunityIcons
+            name="chevron-right"
+            size={26}
+            color={colors.textPrimary}
+          />
+        )}
+      </View>
+    </RectButton>
   );
 };
 
@@ -36,9 +57,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   leftIcon: {
-    marginHorizontal: 20,
+    width: 60,
+    alignItems: "center",
   },
   rightIcon: {
-    marginRight: 30,
+    marginRight: 20,
   },
 });

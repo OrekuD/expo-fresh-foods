@@ -2,24 +2,25 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../../components";
-import { Account, Chat, Orders } from "../../components/Svgs";
+import { Account, Bulb, Chat, Orders } from "../../components/Svgs";
 import { useAppContext } from "../../context/Context";
 import { Setting } from "../../types";
+import Card from "./Card";
 
 const settings: Setting[] = [
   {
     name: "Your account",
-    icon: Account,
+    Icon: Account,
     iconSize: 24,
   },
   {
     name: "Your orders",
-    icon: Orders,
+    Icon: Orders,
     iconSize: 24,
   },
   {
     name: "live chat",
-    icon: Chat,
+    Icon: Chat,
     iconSize: 24,
   },
 ];
@@ -38,6 +39,17 @@ const Settings = () => {
       <Text variant="h2" style={{ marginVertical: 30 }}>
         Settings
       </Text>
+      {settings.map((setting, index) => (
+        <Card setting={setting} key={index} />
+      ))}
+      <Card
+        setting={{
+          iconSize: 28,
+          Icon: Bulb,
+          name: "dark mode",
+        }}
+        theme
+      />
     </View>
   );
 };

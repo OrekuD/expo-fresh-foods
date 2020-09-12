@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Animated, StyleSheet, Easing } from "react-native";
+import { Animated, StyleSheet, Easing, Switch as P } from "react-native";
 import { mediumGrey, green } from "../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 import { BorderlessButton } from "react-native-gesture-handler";
@@ -12,6 +12,16 @@ interface Props {
 const Switch = ({ defaultValue, onValueChange }: Props) => {
   const [value, setValue] = useState<boolean>(defaultValue);
   const animationValue = new Animated.Value(0);
+
+  useEffect(() => {
+    if (value) {
+      animation(1);
+      onValueChange(value);
+    } else {
+      animation(0);
+      onValueChange(value);
+    }
+  }, []);
 
   const animation = (toValue: number) => {
     Animated.timing(animationValue, {

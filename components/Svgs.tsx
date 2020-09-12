@@ -4,108 +4,123 @@ import { SvgProps } from "../types";
 
 export function Bulb({ size, color }: SvgProps) {
   return (
-    <Svg width={size} height={size * 1.024} viewBox="0 0 211.12 216.108">
-      <G transform="translate(-2708 670.108)">
+    <Svg width={size} height={size * 1.023} viewBox="0 0 30.814 31.532">
+      <G id="bulb-icon" transform="translate(-537.007 -637.486)">
         <Path
-          d="M587.243,759.829a58.806,58.806,0,1,1,31.179-.042"
-          transform="translate(2210.807 -1268.675)"
+          id="path"
+          d="M550.181,660.911a8.465,8.465,0,1,1,4.488-.006"
           fill="none"
           stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Path
-          d="M546.515,658.8a58.64,58.64,0,0,1,17.958,42.3"
-          transform="translate(2226.067 -1182.3)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
         />
         <Path
-          d="M573.679,658.8a58.66,58.66,0,0,0-17.951,42.3"
-          transform="translate(2280.857 -1182.3)"
+          id="path-2"
+          data-name="path"
+          d="M546.515,658.8a8.441,8.441,0,0,1,2.585,6.089"
           fill="none"
           stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
         />
         <Path
-          d="M595.145,664.891v11.185a14.012,14.012,0,0,1-14.012,14.013H563.105A14.006,14.006,0,0,1,549.1,676.075V664.891"
-          transform="translate(2241.44 -1146.088)"
+          id="path-3"
+          data-name="path"
+          d="M558.312,658.8a8.444,8.444,0,0,0-2.584,6.089"
           fill="none"
           stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          x2="17.14"
-          transform="translate(2804.651 -477.327)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          y2="21.881"
-          transform="translate(2808.755 -668.108)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          x1="21.881"
-          transform="translate(2895.239 -559.744)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          x1="21.881"
-          transform="translate(2710 -559.744)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          x1="13.993"
-          y2="13.993"
-          transform="translate(2869.555 -634.536)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
-        />
-        <Line
-          x1="13.993"
-          y1="13.993"
-          transform="translate(2740.392 -634.536)"
-          fill="none"
-          stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
         />
         <Path
-          d="M546.871,685.267A38.165,38.165,0,0,1,585.038,647.1"
-          transform="translate(2228.184 -1251.892)"
+          id="path-4"
+          data-name="path"
+          d="M555.728,664.891v1.61a2.017,2.017,0,0,1-2.017,2.017h-2.595A2.016,2.016,0,0,1,549.1,666.5v-1.61"
           fill="none"
           stroke={color}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Path
+          id="path-5"
+          data-name="path"
+          d="M546.871,652.594a5.494,5.494,0,0,1,5.494-5.494"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line"
+          x2="2.467"
+          transform="translate(551.131 665.448)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line-2"
+          data-name="line"
+          y2="3.15"
+          transform="translate(551.722 637.986)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line-3"
+          data-name="line"
+          x1="3.15"
+          transform="translate(564.171 653.585)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line-4"
+          data-name="line"
+          x1="3.15"
+          transform="translate(537.507 653.585)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line-5"
+          data-name="line"
+          x1="2.014"
+          y2="2.014"
+          transform="translate(560.474 642.819)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
+        />
+        <Line
+          id="line-6"
+          data-name="line"
+          x1="2.014"
+          y1="2.014"
+          transform="translate(541.881 642.819)"
+          fill="none"
+          stroke={color}
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1"
         />
       </G>
     </Svg>

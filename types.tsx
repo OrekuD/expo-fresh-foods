@@ -49,6 +49,6 @@ export interface Product {
 
 export interface Setting {
   name: string;
-  icon: ({ size, color }: SvgProps) => JSX.Element;
+  Icon: ({ size, color }: SvgProps) => JSX.Element;
   iconSize: number;
 }
