@@ -31,8 +31,10 @@
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
+    "react-native-shared-element": "^0.7.0",
     "react-native-svg": "^12.1.0",
     "react-native-web": "~0.11.7",
+    "react-navigation-shared-element": "^3.0.0",
     "yup": "^0.29.3"
   },
   "devDependencies": {
@@ -40,10 +42,10 @@
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.62.13",
     "@types/react-native-phone-input": "^0.2.1",
+    "@types/yup": "^0.29.5",
     "babel-preset-expo": "~8.1.0",
     "jest-expo": "~38.0.0",
-    "typescript": "~3.9.5",
-    "@types/yup": "^0.29.5"
+    "typescript": "~3.9.5"
   },
   "private": true
 }

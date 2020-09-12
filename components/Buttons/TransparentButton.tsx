@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import Text from "../Text";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useAppContext } from "../../context/Context";
+import { grey } from "../../constants/Colors";
 
 interface TransparentButtonProps {
   label: number | string;
@@ -19,7 +20,8 @@ const TransparentButton = ({
   marginTop = 0,
   marginVertical = 0,
 }: TransparentButtonProps) => {
-  const { colors } = useAppContext();
+  const { colors, darkTheme } = useAppContext();
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -29,7 +31,10 @@ const TransparentButton = ({
       <Text
         variant="h3"
         uppercase
-        style={{ textAlign: "center", color: colors.textPrimary }}
+        style={{
+          textAlign: "center",
+          color: darkTheme ? grey : colors.textPrimary,
+        }}
       >
         {label}
       </Text>

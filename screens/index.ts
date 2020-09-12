@@ -1,3 +1,6 @@
 export { default as Onboarding } from "./Onboarding/Onboarding";
 export { SignIn, SignUp } from "./Authentication";
-export { Home } from "./Main";
+export { HomeScreen } from "./Home";
+export { RecipesScreen } from "./Recipes";
+export { CartScreen } from "./Cart";
+export { SettingsScreen } from "./Settings";

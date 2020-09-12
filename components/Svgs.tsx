@@ -1,12 +1,126 @@
 import React from "react";
 import Svg, { G, Path, Circle, Line, Rect } from "react-native-svg";
+import { SvgProps } from "../types";
 
-interface Props {
-  size: number;
-  color?: string;
+export function PlusIcon({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 21.299 21.299">
+      <G transform="translate(-13.699 -13.699)">
+        <Line
+          y2="20.299"
+          transform="translate(24.349 14.199)"
+          fill="none"
+          stroke="#fff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1"
+        />
+        <Line
+          x1="20.299"
+          transform="translate(14.199 24.349)"
+          fill="none"
+          stroke="#fff"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1"
+        />
+      </G>
+    </Svg>
+  );
 }
 
-export function Account({ size, color }: Props) {
+export function Settings({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 22.752 22.752">
+      <G
+        transform="translate(.5 .5)"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Circle
+          cx={4.045}
+          cy={4.045}
+          r={4.045}
+          transform="translate(6.831 6.831)"
+        />
+        <Path d="M21.752 11.822V9.931a.857.857 0 00-.857-.857h-1.016a.863.863 0 01-.834-.6 8.449 8.449 0 00-.983-2.154.843.843 0 01.128-1.045h0a.858.858 0 000-1.212l-.5-.5a.856.856 0 00-1.212 0h0a.842.842 0 01-1.044.127 8.42 8.42 0 00-2.155-.982.863.863 0 01-.6-.835V.858a.857.857 0 00-.856-.857H9.931a.857.857 0 00-.856.857v1.016a.861.861 0 01-.6.834 8.458 8.458 0 00-2.155.983.842.842 0 01-1.044-.127h0a.856.856 0 00-1.212 0l-.5.5a.858.858 0 000 1.212h0a.843.843 0 01.128 1.045 8.449 8.449 0 00-.983 2.154.863.863 0 01-.834.6H.861a.857.857 0 00-.857.857v1.891a.857.857 0 00.857.857h1.016a.862.862 0 01.834.6 8.465 8.465 0 00.983 2.154.843.843 0 01-.128 1.045h0a.857.857 0 000 1.211l.5.5a.857.857 0 001.212 0h0a.842.842 0 011.044-.128 8.456 8.456 0 002.155.983.863.863 0 01.6.834v1.016a.856.856 0 00.856.857h1.892a.856.856 0 00.856-.857v-1.016a.863.863 0 01.6-.834 8.456 8.456 0 002.155-.983.842.842 0 011.044.128h0a.858.858 0 001.212 0l.5-.5a.857.857 0 000-1.211h0a.843.843 0 01-.128-1.045 8.465 8.465 0 00.983-2.154.862.862 0 01.834-.6h1.016a.857.857 0 00.855-.858z" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Store({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 0.89} viewBox="0 0 21.648 19.273">
+      <G
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Path d="M21.146 11.624h-1.059v7.146h-2.916v-7.149h-4.233v7.149H1.558v-7.149H.5V9.504l1.858-5.291H19.29l1.858 5.291zm-11.124 4.233v-4.233h-5.55v4.233zM2.358.5H19.29v2.117H2.358z" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Cart({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 1.04} viewBox="0 0 25.778 26.748">
+      <G
+        transform="translate(.518 .5)"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Circle
+          cx={2.269}
+          cy={2.269}
+          r={2.269}
+          transform="translate(15.902 21.211)"
+        />
+        <Path d="M8.1 21.211h11.792a2.312 2.312 0 002.331-2.16 2.269 2.269 0 00-2.267-2.378H6.497a3.975 3.975 0 01-3.676-2.462L.18 7.79a2.356 2.356 0 012.179-3.253h15.206" />
+        <Path d="M8.492 21.211a3.975 3.975 0 01-3.676-2.463h0M17.565 4.537a2.269 2.269 0 002.269-2.269" />
+        <Circle
+          cx={2.269}
+          cy={2.269}
+          r={2.269}
+          transform="translate(6.703 21.211)"
+        />
+        <Path d="M3.53 7.398l2.641 6.421M7.1 7.398l2.641 6.421M10.671 7.398l2.641 6.421M14.241 7.398l2.641 6.421M16.5 4.537l5.556 13.505M4.851 10.608h10.515M24.672.861A1.392 1.392 0 0023.385 0h-1.282a2.268 2.268 0 00-2.269 2.268h3.9a1.019 1.019 0 00.943-1.407z" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Recipes({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 0.77} viewBox="0 0 23.324 18.506">
+      <G
+        transform="translate(.5 .5)"
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Rect
+          width={12.697}
+          height={17.506}
+          rx={0.872}
+          transform="translate(4.813)"
+        />
+        <Path d="M3.271 2.76h1.543v11.987h0-1.543a.872.872 0 01-.872-.872V3.632a.872.872 0 01.872-.872z" />
+        <Path d="M.872 5.088H2.4v7.33h0H.872A.872.872 0 010 11.546V5.96a.872.872 0 01.872-.872zM19.053 14.747H17.51h0V2.76h1.543a.872.872 0 01.872.872v10.243a.872.872 0 01-.872.872z" />
+        <Path d="M21.452 12.418h-1.528 0v-7.33h1.528a.872.872 0 01.872.872v5.586a.872.872 0 01-.872.872zM11.162 10.869L8.896 12.06l.433-2.523L7.496 7.75l2.533-.368 1.133-2.3 1.133 2.3 2.533.368-1.833 1.787.433 2.523z" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Account({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size * 0.95} viewBox="0 0 19.692 18.686">
       <Path
@@ -20,7 +134,7 @@ export function Account({ size, color }: Props) {
   );
 }
 
-export function Padlock({ size, color }: Props) {
+export function Padlock({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size * 1.1} viewBox="0 0 21 23.181">
       <G
@@ -43,7 +157,7 @@ export function Padlock({ size, color }: Props) {
   );
 }
 
-export function Mail({ size, color }: Props) {
+export function Mail({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size * 0.76} viewBox="0 0 21 16">
       <G
@@ -59,7 +173,7 @@ export function Mail({ size, color }: Props) {
   );
 }
 
-export function Onboarding({ size, color }: Props) {
+export function Onboarding({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 315 315">
       <G transform="translate(1531.335 -288.772)">
@@ -350,7 +464,7 @@ export function Onboarding({ size, color }: Props) {
   );
 }
 
-export function Onboarding2({ size, color }: Props) {
+export function Onboarding2({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 315 320">
       <G transform="translate(1090.139 -280.614)">

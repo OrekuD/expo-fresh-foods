@@ -5,12 +5,26 @@ import {
   TransitionPresets,
 } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { RootStackParamList, AuthStackParamList } from "../types";
-import { Onboarding, Home } from "../screens";
+import {
+  RootStackParamList,
+  AuthStackParamList,
+  BottomTabParamList,
+} from "../types";
+import {
+  Onboarding,
+  HomeScreen,
+  RecipesScreen,
+  CartScreen,
+  SettingsScreen,
+} from "../screens";
 import { SignIn, SignUp } from "../screens/Authentication";
+import CustomTab from "../components/CustomTab";
+import { useAppContext } from "../context/Context";
+import { StatusBar } from "react-native";
 
 const RootStack = createStackNavigator<RootStackParamList>();
 const AuthStack = createStackNavigator<AuthStackParamList>();
+const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 const AuthNavigation = () => {
   return (
@@ -32,6 +46,17 @@ const AuthNavigation = () => {
   );
 };
 
+const BottomTabNavigation = () => {
+  return (
+    <BottomTab.Navigator tabBar={(props) => <CustomTab props={props} />}>
+      <BottomTab.Screen name="Home" component={HomeScreen} />
+      <BottomTab.Screen name="Recipes" component={RecipesScreen} />
+      <BottomTab.Screen name="Cart" component={CartScreen} />
+      <BottomTab.Screen name="Settings" component={SettingsScreen} />
+    </BottomTab.Navigator>
+  );
+};
+
 const RootNavigation = () => {
   return (
     <RootStack.Navigator
@@ -42,15 +67,23 @@ const RootNavigation = () => {
     >
       <RootStack.Screen name="Onboarding" component={Onboarding} />
       <RootStack.Screen name="Authentication" component={AuthNavigation} />
-      <RootStack.Screen name="Main" component={Home} />
+      <RootStack.Screen name="Main" component={BottomTabNavigation} />
     </RootStack.Navigator>
   );
 };
 
-const Navigation = () => (
-  <NavigationContainer>
-    <RootNavigation />
-  </NavigationContainer>
-);
+const Navigation = () => {
+  const { darkTheme } = useAppContext();
+  return (
+    <NavigationContainer>
+      <RootNavigation />
+      <StatusBar
+        barStyle={darkTheme ? "light-content" : "dark-content"}
+        backgroundColor="transparent"
+        translucent
+      />
+    </NavigationContainer>
+  );
+};
 
 export default Navigation;

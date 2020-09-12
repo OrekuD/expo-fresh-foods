@@ -5,14 +5,13 @@ import {
   Animated,
   NativeSyntheticEvent,
   NativeScrollEvent,
-  TouchableOpacity,
   ScrollView,
 } from "react-native";
 import { height, width } from "../../constants/Layout";
 import Slide from "./Slide";
 import { OnboardingSlide, RootStackParamList } from "../../types";
 import { mediumGrey } from "../../constants/Colors";
-import { Text, MainButton, TransparentButton } from "../../components";
+import { MainButton, TransparentButton } from "../../components";
 import RecipePreferences from "./RecipePreferences";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";

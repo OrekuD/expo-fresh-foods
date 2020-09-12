@@ -1,10 +1,11 @@
-import React, { ReactChildren, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { Text as RNText, TextStyle, StyleSheet, TextProps } from "react-native";
 import { green, white, darkerGrey, mediumGrey } from "../constants/Colors";
+import { useAppContext } from "../context/Context";
 
 interface Props extends TextProps {
   children: ReactNode;
-  variant: "h1" | "h2" | "h3" | "body" | "body-small" | "link" | "button";
+  variant?: "h1" | "h2" | "h3" | "body" | "body-small" | "link" | "button";
   color?: "green" | "white" | "mediumGrey" | "darkerGrey";
   style?: TextStyle;
   uppercase?: boolean;
@@ -19,6 +20,7 @@ const Text = ({
   ...props
 }: Props) => {
   let style, color;
+  const { colors } = useAppContext();
 
   switch (textColor) {
     case "green":
@@ -34,7 +36,7 @@ const Text = ({
       color = darkerGrey;
       break;
     default:
-      color = "black";
+      color = colors.textPrimary;
       break;
   }
 

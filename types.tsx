@@ -4,6 +4,13 @@ export type RootStackParamList = {
   Main: undefined;
 };
 
+export type BottomTabParamList = {
+  Home: undefined;
+  Recipes: undefined;
+  Cart: undefined;
+  Settings: undefined;
+};
+
 export type AuthStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
@@ -24,4 +31,9 @@ export interface Colors {
   textPrimary: string;
   textSecondary: string;
   background: string;
+}
+
+export interface SvgProps {
+  size: number;
+  color?: string;
 }

@@ -36,7 +36,6 @@ const Slide = ({ slide: { label }, index }: Props) => {
         style={{
           width: width * 0.7,
           textAlign: "center",
-          color: colors.textPrimary,
         }}
       >
         {label}

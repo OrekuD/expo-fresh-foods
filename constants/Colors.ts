@@ -12,7 +12,7 @@ const white = "#FFFFFF";
 
 const dark: Colors = {
   background: darkerGrey,
-  textPrimary: white,
+  textPrimary: mediumGrey,
   textSecondary: lighterGrey,
 };
 
