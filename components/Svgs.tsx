@@ -2,6 +2,175 @@ import React from "react";
 import Svg, { G, Path, Circle, Line, Rect } from "react-native-svg";
 import { SvgProps } from "../types";
 
+export function Bulb({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 1.024} viewBox="0 0 211.12 216.108">
+      <G transform="translate(-2708 670.108)">
+        <Path
+          d="M587.243,759.829a58.806,58.806,0,1,1,31.179-.042"
+          transform="translate(2210.807 -1268.675)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Path
+          d="M546.515,658.8a58.64,58.64,0,0,1,17.958,42.3"
+          transform="translate(2226.067 -1182.3)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Path
+          d="M573.679,658.8a58.66,58.66,0,0,0-17.951,42.3"
+          transform="translate(2280.857 -1182.3)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Path
+          d="M595.145,664.891v11.185a14.012,14.012,0,0,1-14.012,14.013H563.105A14.006,14.006,0,0,1,549.1,676.075V664.891"
+          transform="translate(2241.44 -1146.088)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          x2="17.14"
+          transform="translate(2804.651 -477.327)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          y2="21.881"
+          transform="translate(2808.755 -668.108)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          x1="21.881"
+          transform="translate(2895.239 -559.744)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          x1="21.881"
+          transform="translate(2710 -559.744)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          x1="13.993"
+          y2="13.993"
+          transform="translate(2869.555 -634.536)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Line
+          x1="13.993"
+          y1="13.993"
+          transform="translate(2740.392 -634.536)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+        <Path
+          d="M546.871,685.267A38.165,38.165,0,0,1,585.038,647.1"
+          transform="translate(2228.184 -1251.892)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="4"
+        />
+      </G>
+    </Svg>
+  );
+}
+
+export function Chat({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 19.717 19.722">
+      <G
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Path d="M19.086 17.671l-.935-3.487a9.379 9.379 0 10-3.443 3.665l3.312.887a.87.87 0 001.066-1.065zM6.522 8.127h6.684M6.522 11.602h6.684" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Orders({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 0.79} viewBox="0 0 19 15">
+      <G
+        fill="none"
+        stroke={color}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <Path d="M5.5.5h11.265A1.735 1.735 0 0118.5 2.235v1.53A1.735 1.735 0 0116.765 5.5H5.5h0v-5h0zM5.5 9.5h11.265a1.735 1.735 0 011.735 1.735v1.53a1.735 1.735 0 01-1.735 1.735H5.5h0v-5h0zM5.5 5.5H2.13A1.6 1.6 0 01.5 3.922V2.078A1.6 1.6 0 012.13.5H5.5zM5.5 14.5H2.13A1.6 1.6 0 01.5 12.922v-1.844A1.6 1.6 0 012.13 9.5H5.5z" />
+      </G>
+    </Svg>
+  );
+}
+
+export function Search({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 1.06} viewBox="0 0 18.833 19.921">
+      <G transform="translate(0.5 0.5)">
+        <Circle
+          cx="8.015"
+          cy="8.015"
+          r="8.015"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.4"
+        />
+        <Line
+          x2="4.514"
+          y2="4.514"
+          transform="translate(13.112 14.2)"
+          fill="none"
+          stroke={color}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.4"
+        />
+      </G>
+    </Svg>
+  );
+}
+
 export function PlusIcon({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 21.299 21.299">

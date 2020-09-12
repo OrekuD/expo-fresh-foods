@@ -16,6 +16,7 @@ import {
   RecipesScreen,
   CartScreen,
   SettingsScreen,
+  ProductScreen,
 } from "../screens";
 import { SignIn, SignUp } from "../screens/Authentication";
 import CustomTab from "../components/CustomTab";
@@ -48,7 +49,12 @@ const AuthNavigation = () => {
 
 const BottomTabNavigation = () => {
   return (
-    <BottomTab.Navigator tabBar={(props) => <CustomTab props={props} />}>
+    <BottomTab.Navigator
+      tabBar={(props) => <CustomTab props={props} />}
+      tabBarOptions={{
+        keyboardHidesTabBar: true,
+      }}
+    >
       <BottomTab.Screen name="Home" component={HomeScreen} />
       <BottomTab.Screen name="Recipes" component={RecipesScreen} />
       <BottomTab.Screen name="Cart" component={CartScreen} />
@@ -68,6 +74,7 @@ const RootNavigation = () => {
       <RootStack.Screen name="Onboarding" component={Onboarding} />
       <RootStack.Screen name="Authentication" component={AuthNavigation} />
       <RootStack.Screen name="Main" component={BottomTabNavigation} />
+      <RootStack.Screen name="Product" component={ProductScreen} />
     </RootStack.Navigator>
   );
 };

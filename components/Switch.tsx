@@ -30,7 +30,7 @@ const Switch = ({ defaultValue, onValueChange }: Props) => {
       animation(0);
       onValueChange(value);
     }
-  });
+  }, [value]);
 
   const color = animationValue.interpolate({
     inputRange: [0, 1],

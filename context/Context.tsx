@@ -5,7 +5,6 @@ import React, {
   useContext,
   ReactNode,
 } from "react";
-import {} from "react-native";
 import { AppContext, Colors } from "../types";
 import { dark, light } from "../constants/Colors";
 
@@ -20,8 +19,8 @@ interface ProviderProps {
 }
 
 const Provider = ({ children }: ProviderProps) => {
-  const [darkTheme, setTheme] = useState<boolean>(false);
-  const [colors, setColors] = useState<Colors>(light);
+  const [darkTheme, setTheme] = useState<boolean>(true);
+  const [colors, setColors] = useState<Colors>(dark);
 
   const setDarkTheme = (value: boolean) => setTheme(value);
 

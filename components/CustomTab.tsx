@@ -16,8 +16,6 @@ interface CustomTabProps {
   props: BottomTabBarProps<BottomTabBarOptions>;
 }
 
-// React.FC<{ size: number; color: string }>
-
 interface Tab {
   name: keyof BottomTabParamList | "Plus";
   Icon: ({ color, size }: SvgProps) => JSX.Element;
@@ -75,9 +73,9 @@ const CustomTab = ({ props }: CustomTabProps) => {
         const color = state.index === index ? green : colors.textPrimary;
         if (index === 5) {
           return (
-            <View style={styles.plusIcon} key={index}>
+            <BorderlessButton style={styles.plusIcon} key={index}>
               <PlusIcon color="#ffffff" size={iconSize} />
-            </View>
+            </BorderlessButton>
           );
         } else {
           return (

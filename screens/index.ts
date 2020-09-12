@@ -4,3 +4,4 @@ export { HomeScreen } from "./Home";
 export { RecipesScreen } from "./Recipes";
 export { CartScreen } from "./Cart";
 export { SettingsScreen } from "./Settings";
+export { ProductScreen } from "./Product";

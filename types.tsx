@@ -1,7 +1,10 @@
+import { ImageRequireSource } from "react-native";
+
 export type RootStackParamList = {
   Onboarding: undefined;
   Authentication: undefined;
   Main: undefined;
+  Product: { product: Product };
 };
 
 export type BottomTabParamList = {
@@ -36,4 +39,16 @@ export interface Colors {
 export interface SvgProps {
   size: number;
   color?: string;
+}
+
+export interface Product {
+  name: string;
+  image: ImageRequireSource;
+  color: string;
+}
+
+export interface Setting {
+  name: string;
+  icon: ({ size, color }: SvgProps) => JSX.Element;
+  iconSize: number;
 }
