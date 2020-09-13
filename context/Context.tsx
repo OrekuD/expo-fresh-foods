@@ -19,8 +19,8 @@ interface ProviderProps {
 }
 
 const Provider = ({ children }: ProviderProps) => {
-  const [darkTheme, setTheme] = useState<boolean>(true);
-  const [colors, setColors] = useState<Colors>(dark);
+  const [darkTheme, setTheme] = useState<boolean>(false);
+  const [colors, setColors] = useState<Colors>(light);
 
   const setDarkTheme = (value: boolean) => setTheme(value);
 

@@ -45,6 +45,7 @@ export interface Product {
   name: string;
   image: ImageRequireSource;
   color: string;
+  price: number;
 }
 
 export interface Setting {

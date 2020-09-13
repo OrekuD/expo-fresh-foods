@@ -50,7 +50,7 @@ const Home = ({ navigation }: StackScreenProps<RootStackParamList, "Main">) => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ marginVertical: 30, paddingHorizontal: 20 }}
         >
-          {products.map((product, index) => (
+          {products.slice(0, 5).map((product, index) => (
             <Card
               product={product}
               key={index}
