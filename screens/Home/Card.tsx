@@ -2,6 +2,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
+import { SharedElement } from "react-navigation-shared-element";
 import { Text } from "../../components";
 import { Product, RootStackParamList } from "../../types";
 
@@ -25,7 +26,9 @@ const Card = ({ product, last, navigation }: CardProps) => {
       onPress={() => navigation.push("Product", { product })}
     >
       <View style={styles.imageContainer}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
+        <SharedElement id={`item.${product.name}.photo`}>
+          <Image source={image} style={styles.image} resizeMode="contain" />
+        </SharedElement>
       </View>
       <Text
         variant="body"

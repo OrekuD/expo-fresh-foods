@@ -13,16 +13,6 @@ const Switch = ({ defaultValue, onValueChange }: Props) => {
   const [value, setValue] = useState<boolean>(defaultValue);
   const animationValue = new Animated.Value(0);
 
-  useEffect(() => {
-    if (value) {
-      animation(1);
-      onValueChange(value);
-    } else {
-      animation(0);
-      onValueChange(value);
-    }
-  }, []);
-
   const animation = (toValue: number) => {
     Animated.timing(animationValue, {
       toValue,
@@ -40,7 +30,7 @@ const Switch = ({ defaultValue, onValueChange }: Props) => {
       animation(0);
       onValueChange(value);
     }
-  }, [value]);
+  }, [value, animation]);
 
   const color = animationValue.interpolate({
     inputRange: [0, 1],

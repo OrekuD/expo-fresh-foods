@@ -4,6 +4,7 @@ import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
+import { createSharedElementStackNavigator } from "react-navigation-shared-element";
 import { NavigationContainer } from "@react-navigation/native";
 import {
   RootStackParamList,
@@ -23,7 +24,7 @@ import CustomTab from "../components/CustomTab";
 import { useAppContext } from "../context/Context";
 import { StatusBar } from "react-native";
 
-const RootStack = createStackNavigator<RootStackParamList>();
+const RootStack = createSharedElementStackNavigator<RootStackParamList>();
 const AuthStack = createStackNavigator<AuthStackParamList>();
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -74,7 +75,24 @@ const RootNavigation = () => {
       <RootStack.Screen name="Onboarding" component={Onboarding} />
       <RootStack.Screen name="Authentication" component={AuthNavigation} />
       <RootStack.Screen name="Main" component={BottomTabNavigation} />
-      <RootStack.Screen name="Product" component={ProductScreen} />
+      <RootStack.Screen
+        name="Product"
+        component={ProductScreen}
+        sharedElementsConfig={(route) => {
+          const { product } = route.params;
+          return [`item.${product.name}.photo`];
+        }}
+        options={{
+          gestureEnabled: false,
+          cardStyleInterpolator: ({ current: { progress } }) => {
+            return {
+              cardStyle: {
+                opacity: progress,
+              },
+            };
+          },
+        }}
+      />
     </RootStack.Navigator>
   );
 };

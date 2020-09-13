@@ -2,6 +2,17 @@ import React from "react";
 import Svg, { G, Path, Circle, Line, Rect } from "react-native-svg";
 import { SvgProps } from "../types";
 
+export function Arrow({ size, color }: SvgProps) {
+  return (
+    <Svg width={size} height={size * 0.877} viewBox="0 0 17.053 14.964">
+      <G fill="none" stroke={color} strokeLinecap="round">
+        <Path d="M7.275.707L.5 7.482l6.775 6.775" strokeLinejoin="round" />
+        <Path d="M1.355 7.479h15.198" />
+      </G>
+    </Svg>
+  );
+}
+
 export function Bulb({ size, color }: SvgProps) {
   return (
     <Svg width={size} height={size * 1.023} viewBox="0 0 30.814 31.532">
