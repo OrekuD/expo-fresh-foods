@@ -2,15 +2,15 @@
 
 ![Gif](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/gif.gif?raw=true)
 
-![Screenshot 1](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/1.jpg?raw=true)
-
-![Screenshot 2](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/2.jpg?raw=true)
-
 ### Dark theme
 
 ![Screenshot 7](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/7.jpg?raw=true)
 
 ### App screenshots
+
+![Screenshot 1](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/1.jpg?raw=true)
+
+![Screenshot 2](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/2.jpg?raw=true)
 
 ![Screenshot 3](https://github.com/OrekuD/expo-fresh-foods/blob/master/assets/screenshots/3.jpg?raw=true)
 
