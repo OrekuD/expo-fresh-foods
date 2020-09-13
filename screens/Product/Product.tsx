@@ -17,7 +17,6 @@ import { Cart } from "../../components/Svgs";
 import { darkGrey, green, lighterGrey } from "../../constants/Colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
-import { BorderlessButton } from "react-native-gesture-handler";
 
 const IMAGE_SIZE = width * 0.9;
 
@@ -63,9 +62,9 @@ const Product = ({
     <ScrollView style={{ backgroundColor: colors.background }}>
       <View style={{ ...styles.container, paddingTop, paddingBottom: 50 }}>
         <TouchableOpacity
-          onPress={() => navigation.pop()}
+          onPress={navigation.goBack}
           activeOpacity={0.8}
-          style={styles.closeIcon}
+          style={styles.backIcon}
         >
           <Ionicons
             name="md-arrow-round-back"
@@ -158,7 +157,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     position: "relative",
   },
-  closeIcon: {
+  backIcon: {
     margin: 20,
     width: 40,
     height: 40,

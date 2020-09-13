@@ -4,8 +4,6 @@ import { Text, Switch } from "../../components";
 import { width } from "../../constants/Layout";
 import { useAppContext } from "../../context/Context";
 
-interface RecipePreferencesProps {}
-
 const preferences = [
   {
     name: "All",

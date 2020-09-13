@@ -4,6 +4,7 @@ export type RootStackParamList = {
   Onboarding: undefined;
   Authentication: undefined;
   Main: undefined;
+  Products: undefined;
   Product: { product: Product };
 };
 

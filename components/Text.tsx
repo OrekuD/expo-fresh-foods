@@ -5,7 +5,7 @@ import { useAppContext } from "../context/Context";
 
 interface Props extends TextProps {
   children: ReactNode;
-  variant?: "h1" | "h2" | "h3" | "body" | "body-small" | "link" | "button";
+  variant?: "h1" | "h2" | "h3" | "body";
   color?: "green" | "white" | "mediumGrey" | "darkerGrey";
   style?: TextStyle;
   uppercase?: boolean;
@@ -53,9 +53,6 @@ const Text = ({
     case "body":
       style = styles.body;
       break;
-    case "body-small":
-      style = styles.bodySmall;
-      break;
     default:
       break;
   }
@@ -91,18 +88,6 @@ const styles = StyleSheet.create({
     fontFamily: "Acumin-Regular",
     fontSize: 16,
   },
-  bodySmall: {
-    fontFamily: "Acumin-Regular",
-    fontSize: 14,
-  },
-  //   link: {
-  //     fontFamily: "Acumin-Regular",
-  //     fontSize: 14,
-  //   },
-  //   button: {
-  //     fontFamily: "Acumin-Regular",
-  //     fontSize: 14,
-  //   },
 });
 
 export default Text;

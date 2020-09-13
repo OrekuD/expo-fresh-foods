@@ -1,8 +1,13 @@
 import { StackScreenProps } from "@react-navigation/stack";
 import React from "react";
-import { View, StyleSheet, ScrollView, Image } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
-import { color } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Text } from "../../components";
 import { Search } from "../../components/Svgs";
@@ -42,15 +47,20 @@ const Home = ({ navigation }: StackScreenProps<RootStackParamList, "Main">) => {
         <Text variant="h1" style={{ alignSelf: "center", marginVertical: 10 }}>
           Vegetables
         </Text>
-        <Text variant="body" style={{ alignSelf: "center" }}>
-          Browse
-        </Text>
+        <TouchableOpacity
+          activeOpacity={0.8}
+          onPress={() => navigation.push("Products")}
+        >
+          <Text variant="h3" style={{ alignSelf: "center" }}>
+            Browse
+          </Text>
+        </TouchableOpacity>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ marginVertical: 30, paddingHorizontal: 20 }}
         >
-          {products.slice(0, 5).map((product, index) => (
+          {products.slice(0, 4).map((product, index) => (
             <Card
               product={product}
               key={index}

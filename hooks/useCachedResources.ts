@@ -12,10 +12,7 @@ export default function useCachedResources() {
 
         await Font.loadAsync({
           "Acumin-SemiBold": require("../assets/fonts/Acumin-Semibold.otf"),
-          "Acumin-ItalicBold": require("../assets/fonts/Acumin-ItalicBold.otf"),
           "Acumin-Regular": require("../assets/fonts/Acumin-Regular.ttf"),
-          "Acumin-Bold": require("../assets/fonts/Acumin-Bold.otf"),
-          "Acumin-Italic": require("../assets/fonts/Acumin-Italic.otf"),
         });
       } catch (e) {
         console.warn(e);

@@ -7,9 +7,7 @@ import { width, height } from "../../constants/Layout";
 import { useAppContext } from "../../context/Context";
 import { darkGrey, lighterGrey, grey } from "../../constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
-import { StackNavigationProp } from "@react-navigation/stack";
 import { BorderlessButton } from "react-native-gesture-handler";
-import { RootStackParamList } from "../../types";
 import { useNavigation } from "@react-navigation/native";
 
 interface FormProps {

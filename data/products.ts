@@ -20,16 +20,16 @@ export const products: Product[] = [
     price: 2.99,
   },
   {
-    name: "Broccoli",
-    image: require("../assets/images/broccoli.png"),
-    color: "#3B834A",
-    price: 4.49,
-  },
-  {
     name: "Apple",
     image: require("../assets/images/apple.png"),
     color: "#DD4040",
     price: 1.99,
+  },
+  {
+    name: "Broccoli",
+    image: require("../assets/images/broccoli.png"),
+    color: "#3B834A",
+    price: 4.49,
   },
   {
     name: "Kale",

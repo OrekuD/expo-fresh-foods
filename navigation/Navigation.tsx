@@ -23,6 +23,7 @@ import { SignIn, SignUp } from "../screens/Authentication";
 import CustomTab from "../components/CustomTab";
 import { useAppContext } from "../context/Context";
 import { StatusBar } from "react-native";
+import Products from "../screens/Products/Products";
 
 const RootStack = createSharedElementStackNavigator<RootStackParamList>();
 const AuthStack = createStackNavigator<AuthStackParamList>();
@@ -75,6 +76,7 @@ const RootNavigation = () => {
       <RootStack.Screen name="Onboarding" component={Onboarding} />
       <RootStack.Screen name="Authentication" component={AuthNavigation} />
       <RootStack.Screen name="Main" component={BottomTabNavigation} />
+      <RootStack.Screen name="Products" component={Products} />
       <RootStack.Screen
         name="Product"
         component={ProductScreen}

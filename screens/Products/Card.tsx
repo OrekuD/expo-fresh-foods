@@ -4,24 +4,26 @@ import { StyleSheet, Image, View } from "react-native";
 import { RectButton } from "react-native-gesture-handler";
 import { SharedElement } from "react-navigation-shared-element";
 import { Text } from "../../components";
+import { mediumGrey } from "../../constants/Colors";
+import { width } from "../../constants/Layout";
+import { useAppContext } from "../../context/Context";
 import { Product, RootStackParamList } from "../../types";
 
 interface CardProps {
   product: Product;
-  last: boolean;
-  navigation: StackNavigationProp<RootStackParamList, "Main">;
+  navigation: StackNavigationProp<RootStackParamList, "Products">;
 }
 
-const WIDTH = 180;
+const WIDTH = width * 0.45;
 
-const Card = ({ product, last, navigation }: CardProps) => {
+const Card = ({ product, navigation }: CardProps) => {
+  const { colors } = useAppContext();
   const { color, image, name } = product;
   return (
     <RectButton
       style={{
         ...styles.container,
-        backgroundColor: color,
-        marginRight: last ? 0 : 20,
+        backgroundColor: colors.background,
       }}
       onPress={() => navigation.push("Product", { product })}
     >
@@ -30,11 +32,7 @@ const Card = ({ product, last, navigation }: CardProps) => {
           <Image source={image} style={styles.image} resizeMode="contain" />
         </SharedElement>
       </View>
-      <Text
-        variant="body"
-        style={{ marginVertical: 20, alignSelf: "center" }}
-        color="white"
-      >
+      <Text variant="body" style={{ marginVertical: 20, alignSelf: "center" }}>
         {name}
       </Text>
     </RectButton>
@@ -48,6 +46,12 @@ const styles = StyleSheet.create({
     width: WIDTH,
     height: WIDTH * 1.22,
     borderRadius: 12,
+    marginBottom: (width * 0.1) / 3,
+    elevation: 2,
+    shadowColor: mediumGrey,
+    shadowOffset: { width: 2, height: 2 },
+    shadowRadius: 5,
+    shadowOpacity: 0.26,
   },
   imageContainer: {
     flex: 1,

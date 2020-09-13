@@ -4,7 +4,6 @@ import Text from "../Text";
 import { width } from "../../constants/Layout";
 import { green } from "../../constants/Colors";
 import { RectButton } from "react-native-gesture-handler";
-import { Ionicons } from "@expo/vector-icons";
 
 interface MainButtonProps {
   label: number | string;

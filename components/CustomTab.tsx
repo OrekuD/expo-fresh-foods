@@ -1,9 +1,8 @@
-import { Ionicons } from "@expo/vector-icons";
 import {
   BottomTabBarProps,
   BottomTabBarOptions,
 } from "@react-navigation/bottom-tabs";
-import React, { ReactNode } from "react";
+import React from "react";
 import { View, StyleSheet } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
